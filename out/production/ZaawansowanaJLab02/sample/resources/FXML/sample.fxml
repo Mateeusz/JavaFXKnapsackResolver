@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane fx:id="borderPane" prefHeight="540.0" prefWidth="630.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <VBox BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                    </BorderPane.margin>
+                    <children>
+                        <MenuBar prefHeight="29.0" prefWidth="627.0">
+                            <menus>
+                                <Menu fx:id="menuApp" mnemonicParsing="false" text="%appBut">
+                                    <items>
+                                        <Menu fx:id="menuLan" mnemonicParsing="false" text="%langBut">
+                                            <items>
+                                                <MenuItem fx:id="menuGB" mnemonicParsing="false" onAction="#changeToEnglish" text="%engBut" />
+                                    <MenuItem fx:id="menuUS" mnemonicParsing="false" onAction="#changeToEnglishUS" text="%engUSBut" />
+                                                <MenuItem fx:id="menuPl" mnemonicParsing="false" onAction="#changeToPolish" text="%plBut" />
+                                            </items>
+                                        </Menu>
+                                        <MenuItem fx:id="menuExit" mnemonicParsing="false" onAction="#closeApp" text="%exitBut" />
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="menuHelp" mnemonicParsing="false" onAction="#aboutApp" text="%helpButton">
+                                    <items>
+                                        <MenuItem fx:id="menuAbout" mnemonicParsing="false" text="%aboutAppBut" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+                        <Label fx:id="dateLabel" prefHeight="16.0" prefWidth="626.0" text="%dateLabel">
+                            <font>
+                                <Font name="Aleo-Regular" size="13.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </Label>
+                        <Text fx:id="mainText" strokeType="OUTSIDE" strokeWidth="0.0" text="%titleApp" textAlignment="CENTER" wrappingWidth="629.0960083007812">
+                            <font>
+                                <Font name="Aleo-Regular" size="32.0" />
+                            </font>
+                        </Text>
+                        <Line endX="430.0" startX="-100.0">
+                            <VBox.margin>
+                                <Insets left="50.0" right="50.0" />
+                            </VBox.margin>
+                        </Line>
+                    </children>
+                </VBox>
+            </top>
+            <center>
+                <VBox BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets left="50.0" right="50.0" />
+                    </BorderPane.margin>
+                    <children>
+                        <HBox prefHeight="194.0" prefWidth="530.0">
+                            <children>
+                                <VBox prefHeight="322.0" prefWidth="200.0">
+                                    <children>
+                                        <Text fx:id="capaLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="%capacityLabel">
+                                            <font>
+                                                <Font name="Aleo-Regular" size="13.0" />
+                                            </font>
+                                        </Text>
+                                        <HBox prefHeight="38.0" prefWidth="200.0">
+                                            <children>
+                                                <TextField fx:id="bagCapacityLabel" prefHeight="30.0" prefWidth="80.0">
+                                                    <HBox.margin>
+                                                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                    </HBox.margin>
+                                                </TextField>
+                                                <Button fx:id="addCappacityButton" mnemonicParsing="false" onAction="#addCapacity" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: gray; -fx-border-color: white; -fx-border-radius: 90; -fx-background-radius: 90;" text="%addBut" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Aleo-Regular" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets bottom="5.0" left="5.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                        <Text fx:id="addItemLabel1" strokeType="OUTSIDE" strokeWidth="0.0" text="%addItemLabel">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="15.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Aleo-Regular" size="13.0" />
+                                            </font>
+                                        </Text>
+                                        <HBox prefHeight="20.0" prefWidth="156.0">
+                                            <children>
+                                                <Text fx:id="valLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="%valueLabel">
+                                                    <font>
+                                                        <Font name="Aleo-Regular" size="13.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="weightLabel" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%weightLabel">
+                                                    <HBox.margin>
+                                                        <Insets left="48.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Aleo-Regular" size="13.0" />
+                                                    </font>
+                                                </Text>
+                                            </children>
+                                        </HBox>
+                                        <HBox layoutX="10.0" layoutY="54.0" prefHeight="39.0" prefWidth="200.0">
+                                            <children>
+                                                <TextField fx:id="addWeightLabel" />
+                                                <TextField fx:id="addValueLabel" layoutX="10.0" layoutY="10.0">
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" />
+                                                    </HBox.margin>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                        <Button fx:id="addItemLabel" mnemonicParsing="false" onAction="#addItem" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: orange; -fx-border-color: white; -fx-border-radius: 90; -fx-background-radius: 90;" text="%addBut" textFill="WHITE">
+                                            <font>
+                                                <Font name="Aleo-Regular" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="218.0" prefWidth="311.0">
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                    <children>
+                                        <Text fx:id="aviItems" strokeType="OUTSIDE" strokeWidth="0.0" text="%aviItems">
+                                            <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Aleo-Regular" size="13.0" />
+                                            </font>
+                                        </Text>
+                                        <TableView fx:id="itemTableView" prefHeight="150.0" prefWidth="333.0">
+                                            <columns>
+                                                <TableColumn fx:id="weightCoulumne" prefWidth="75.0" text="%valueLabel" />
+                                                <TableColumn fx:id="valueCoulumne" prefWidth="75.0" text="%weightLabel" />
+                                            </columns>
+                                            <VBox.margin>
+                                                <Insets bottom="14.0" />
+                                            </VBox.margin>
+                                        </TableView>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <Line endX="430.0" startX="-100.0">
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                            </VBox.margin>
+                        </Line>
+                        <HBox prefHeight="225.0" prefWidth="531.0">
+                            <children>
+                                <VBox prefHeight="257.0" prefWidth="200.0">
+                                    <children>
+                              <Button fx:id="clearInstatnionButton" mnemonicParsing="false" onAction="#clearInstantion" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: brown; -fx-border-color: white; -fx-border-radius: 90; -fx-background-radius: 90;" text="%clrInstantion" textFill="WHITE">
+                                 <font>
+                                    <Font name="Aleo-Regular" size="16.0" />
+                                 </font>
+                              </Button>
+                                        <Label fx:id="actualCapacityLabel" text="%bagCapLabel" visible="false">
+                                            <font>
+                                                <Font name="Aleo Light" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Text fx:id="chooseAlgLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="%chooseAlgorithm" wrappingWidth="161.0908203125">
+                                            <font>
+                                                <Font name="Aleo-Regular" size="13.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Text>
+                                        <ComboBox fx:id="algorithmComboBox" prefHeight="27.0" prefWidth="200.0">
+                                            <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                    <String fx:value="Brute Force" />
+                                                    <String fx:value="Randomized" />
+                                                </FXCollections>
+                                            </items>
+                                            <VBox.margin>
+                                                <Insets top="5.0" />
+                                            </VBox.margin>
+                                        </ComboBox>
+                                        <Button fx:id="solveButton" mnemonicParsing="false" onAction="#resolve" prefHeight="34.0" prefWidth="197.0" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 90; -fx-background-radius: 90;" text="%solutionBut" textFill="WHITE">
+                                            <VBox.margin>
+                                                <Insets top="5.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Aleo-Regular" size="16.0" />
+                                            </font>
+                                        </Button>
+                                        <ImageView fitHeight="76.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" left="60.0" top="10.0" />
+                                            </VBox.margin>
+                                            <image>
+                                                <Image url="@../../bag.jpeg" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="21.0" prefWidth="311.0">
+                                    <children>
+                                        <Text fx:id="solutionLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="%solutionLabel">
+                                            <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                            </VBox.margin>
+                                 <font>
+                                    <Font name="Aleo-Regular" size="13.0" />
+                                 </font>
+                                        </Text>
+                                        <TableView fx:id="tableViewSolution" prefHeight="180.0" prefWidth="311.0">
+                                            <columns>
+                                                <TableColumn fx:id="weightColumneSolution" prefWidth="75.0" text="%valueLabel" />
+                                                <TableColumn fx:id="sizeColumneSolution" prefWidth="75.0" text="%weightLabel" />
+                                            </columns>
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                            </VBox.margin>
+                                        </TableView>
+                              <Text fx:id="itemSol" strokeType="OUTSIDE" strokeWidth="0.0" text="%solNumLab">
+                                 <font>
+                                    <Font name="Aleo-Regular" size="13.0" />
+                                 </font>
+                              </Text>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+   </children>
+</AnchorPane>
